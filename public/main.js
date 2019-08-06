@@ -6,11 +6,11 @@ const main = () => {
 
 // Team 1
 
-const team = document.querySelector(".Teams");
+const team = document.querySelector(".teams");
 
-const team1 = document.querySelector(".Team-1");
+const team1 = document.querySelector(".team-1");
 
-const team1name = document.querySelector(".Team-1-name");
+const team1name = document.querySelector(".team-1-name");
 
 const team1score = document.querySelector(".team-1-score");
 
@@ -134,9 +134,7 @@ document
   .querySelector(".team-2-subtract-1-button")
   .addEventListener("click", subtractToTeamScore);
 
-teamsubtract1button.addEventListener("click", subtractToTeamScore);
-
-//change team 1 name
+teamsubtract1button.addEventListener("click", subtractToTeamScore); //change team 1 name
 
 const team1UpdateName = () => {
   console.log("New name was typed into box, button was clicked");
@@ -146,6 +144,7 @@ const team1UpdateName = () => {
 };
 
 document
-  .querySelector(".update-team-1-name")
+  .querySelector("update-team-1-name")
   .addEventListener("click", team1UpdateName);
-// change team 2 name
+
+document.addEventListener("DOMContentLoaded", main);
