@@ -1,150 +1,180 @@
 const main = () => {
-  if (document.querySelector("h1.hello-world")) {
-    document.querySelector("h1.hello-world").textContent = "Hello, World!";
+  if (document.querySelector('h1.hello-world')) {
+    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
   }
-};
+}
 
 // Team 1
 
-const team = document.querySelector(".teams");
+const team = document.querySelector('.teams')
 
-const team1 = document.querySelector(".team-1");
+const team1 = document.querySelector('.team-1')
 
-const team1name = document.querySelector(".team-1-name");
+const team1name = document.querySelector('.team-1-name')
 
-const team1score = document.querySelector(".team-1-score");
+const team1score = document.querySelector('.team-1-score')
 
-const team1input = document.querySelector(".team-1-input");
+const team1input = document.querySelector('.team-1-input')
 
-const updateteam1name = document.querySelector(".update-team-1-name");
+const updateteam1name = document.querySelector('.update-team-1-name')
 
-const team1add1button = document.querySelector(".team-1-add-1-button");
+const team1add1button = document.querySelector('.team-1-add-1-button')
 
-const team1subtract1button = document.querySelector(
-  ".team-1-subtract-1-button"
-);
+let quarterCounter = 0
 
 // Team 2
 
-const team2 = document.querySelector(".team-2");
+const team2 = document.querySelector('.team-2')
 
-const team2score = document.querySelector(".team-2-score");
+const team2score = document.querySelector('.team-2-score')
 
-const team2input = document.querySelector(".team-2-input");
+const team2input = document.querySelector('.team-2-input')
 
-const updateteam2name = document.querySelector(".update-team-2-name");
+const updateteam2name = document.querySelector('.update-team-2-name')
 
-const team2add1button = document.querySelector(".team-2-add-1-button");
+const team2add1button = document.querySelector('.team-2-add-1-button')
 
-const team2subtract1button = document.querySelector(
-  ".team-2-subtract-1-button"
-);
+const team2subtract1button = document.querySelector('.team-2-subtract-1-button')
 
-//function add 1 to team 1
+// function add 1 to team 1
 
 const add1ToTeamScore = () => {
-  console.log("button was clicked");
+  console.log('button was clicked')
 
   //getting
 
-  const currentScore = document.querySelector(".team-1-score").textContent;
+  const currentScore = document.querySelector('.team-1-score').textContent
 
-  //updating
+  // updating
 
-  const newScore = parseInt(currentScore) + 1;
-
-  //updating in html
-
-  document.querySelector(".team-1-score").textContent = newScore;
-};
+  const newScore = parseInt(currentScore) + 1
+  if (newScore > 21) {
+    document.querySelector('.team-1-score').textContent = 21
+  } else {
+    document.querySelector('.team-1-score').textContent = newScore
+  }
+}
 
 document
-  .querySelector(".team-1-add-1-button")
-  .addEventListener("click", add1ToTeamScore);
+  .querySelector('.team-1-add-1-button')
+  .addEventListener('click', add1ToTeamScore)
 
-team1add1button.addEventListener("click", add1ToTeamScore);
+team1add1button.addEventListener('click', add1ToTeamScore)
 
-//function subtract 1 from team 1
+// function subtract 1 from team 1
 
 const subtract1ToTeamScore = () => {
-  console.log("button was clicked");
+  console.log('button was clicked')
 
-  //getting
+  // getting
 
-  const currentScore = document.querySelector(".team-1-score").textContent;
+  const currentScore = document.querySelector('.team-1-score').textContent
 
-  //updating
+  // updating
 
-  const newScore = parseInt(currentScore) - 1;
-
-  //updating in html
-
-  document.querySelector(".team-1-score").textContent = newScore;
-};
+  const newScore = parseInt(currentScore) - 1
+  if (newScore < 0) {
+    document.querySelector('.team-1-score').textContent = 0
+  } else {
+    document.querySelector('.team-1-score').textContent = newScore
+  }
+  // updating in html
+}
 
 document
-  .querySelector(".team-1-subtract-1-button")
-  .addEventListener("click", subtract1ToTeamScore);
+  .querySelector('.team-1-subtract-1-button')
+  .addEventListener('click', subtract1ToTeamScore)
 
-team1subtract1button.addEventListener("click", subtract1ToTeamScore);
+const team1subtract1button = document.querySelector('.team-1-subtract-1-button')
+team1subtract1button.addEventListener('click', subtract1ToTeamScore)
 
-//function add 1 to team 2
+// function add 1 to team 2
 
 const addToTeamScore = () => {
-  console.log("button was clicked");
+  console.log('button was clicked')
 
-  //getting
+  // getting
 
-  const currentScore = document.querySelector(".team-2-score").textContent;
+  const currentScore = document.querySelector('.team-2-score').textContent
 
-  //updating
+  // updating
 
-  const newScore = parseInt(currentScore) + 1;
+  const newScore = parseInt(currentScore) + 1
+  if (newScore > 21) {
+    document.querySelector('.team-2-score').textContent = 21
+  } else {
+    document.querySelector('.team-2-score').textContent = newScore
+  }
 
-  //updating in html
-
-  document.querySelector(".team-2-score").textContent = newScore;
-};
+  let quarter = document.querySelector('.quarter-2-number')
+  quarter.innerHTML = quarterCounter
+}
 
 document
-  .querySelector(".team-2-add-1-button")
-  .addEventListener("click", addToTeamScore);
+  .querySelector('.team-2-add-1-button')
+  .addEventListener('click', addToTeamScore)
 
-team2add1button.addEventListener("click", addToTeamScore);
+team2add1button.addEventListener('click', addToTeamScore)
 
-//function subtract 1 from team 2
+// function subtract 1 from team 2
 
 const subtractToTeamScore = () => {
-  console.log("button was clicked");
+  // get the current score
+  // subtract
+  // check if the new score < 0
+  // update the HTML accordly
 
-  //getting
+  console.log('button was clicked')
 
-  const currentScore = document.querySelector(".team-2-score").textContent;
+  // getting
 
-  //updating
+  const currentScore = document.querySelector('.team-2-score').textContent
 
-  const newScore = parseInt(currentScore) - 1;
+  // updating
 
-  //updating in html
-
-  document.querySelector(".team-2-score").textContent = newScore;
-};
+  const newScore = parseInt(currentScore) - 1
+  if (newScore < 0) {
+    document.querySelector('.team-2-score').textContent = 0
+  } else {
+    document.querySelector('.team-2-score').textContent = newScore
+  }
+}
 
 document
-  .querySelector(".team-2-subtract-1-button")
-  .addEventListener("click", subtractToTeamScore);
+  .querySelector('.team-2-subtract-1-button')
+  .addEventListener('click', subtractToTeamScore)
 
-teamsubtract1button.addEventListener("click", subtractToTeamScore); //change team 1 name
+team2subtract1button.addEventListener('click', subtractToTeamScore) // change team 1 name
 
+// change team name 1
 const team1UpdateName = () => {
-  console.log("New name was typed into box, button was clicked");
-  const currentName = document.querySelector(".team-1-name");
-  const team1Input = document.querySelector(".team-1-input");
-  currentName.innerHTML = team1Input.value;
-};
+  console.log('New name was typed into box, button was clicked')
+  const currentName = document.querySelector('.team-1-name')
+  const team1Input = document.querySelector('.team-1-input')
+  currentName.innerHTML = team1Input.value
+}
 
 document
-  .querySelector("update-team-1-name")
-  .addEventListener("click", team1UpdateName);
+  .querySelector('.update-team-1-name')
+  .addEventListener('click', team1UpdateName)
 
-document.addEventListener("DOMContentLoaded", main);
+// change team name 2
+const team2UpdateName = () => {
+  console.log('New name was typed into box, button was clicked')
+  const currentName = document.querySelector('.team-2-name')
+  const team2Input = document.querySelector('.team-2-input')
+  currentName.innerHTML = team2Input.value
+}
+
+document
+  .querySelector('.update-team-2-name')
+  .addEventListener('click', team2UpdateName)
+
+const reset = () => {
+  console.log('button was clicked, reset')
+  // reset team 1 score
+  // reset team 2 score
+  document.querySelector('.team-2-score').textContent = 10
+  document.querySelector('.team-1-score').textContent = 10
+}
+document.querySelector('.reset').addEventListener('click', reset)
